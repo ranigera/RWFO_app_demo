@@ -39,7 +39,7 @@ async function loadAppDemo(demoTrialNum) {
 	document.getElementById('demoLoadButton').onclick = '';
 	// check when to present again the button that closes the demo app:
 
-	var demoUrl = "index.html?demoTrialNum=" + demoTrialNum;
+	var demoUrl = "app.html?demoTrialNum=" + demoTrialNum;
 
 	if (!document.getElementById("embedded_app")) { //i.e. it's the first time
 		// embed the app for demo purposes:
