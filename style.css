@@ -3,7 +3,6 @@ html {
 }
 
 body {
-  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -834,6 +833,7 @@ h1 {
   margin-bottom: 1.8vh;
   border: 0.231vh solid transparent;
   background-color: rgba(200, 200, 200, 0.35);
+  overflow: hidden;
   border-radius: 0.881vh;
 }
 
@@ -845,6 +845,7 @@ h1 {
   margin-right: 0.785vh;
   margin-top: 1.8vh;
   margin-bottom: 1.8vh;
+  overflow: hidden;
   border-radius: 0.881vh;
 }
 
