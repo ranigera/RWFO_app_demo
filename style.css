@@ -39,8 +39,8 @@ body {
 
 .full_bg_image {
   position: fixed;
-  width: 275px;
-  height: 530px;
+  width: 100%;
+  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -577,7 +577,7 @@ h1 {
 
   border: 0.5vw solid rgb(100, 100, 100);
   background-color: rgba(220, 220, 220, 0.75);
-  border-radius: 15px;
+  border-radius: 1.763vh;
 }
 
 .goodByeMessageTextSize {
@@ -620,7 +620,7 @@ h1 {
   text-align: center;
   font-size: 4.2vw;
   transition-duration: 0.4s;
-  border-radius: 25px;
+  border-radius: 2.938vh;
   outline: none;
   z-index: 999;
 }
@@ -647,7 +647,7 @@ h1 {
   border: 1vw solid rgb(50, 50, 50);
   color: rgb(50, 50, 50);
   font-size: 6vw;
-  border-radius: 40px;
+  border-radius: 4.7vh;
   outline: none;
 }
 
@@ -671,7 +671,7 @@ h1 {
   color: rgb(50, 50, 50);
   font-size: 5vw;
   text-align: right;
-  border-radius: 15px;
+  border-radius: 1.763vh;
   margin: 1vh;
   padding: 1.5vh;
   outline: none;
@@ -720,11 +720,11 @@ h1 {
 .demoTextBox {
   position: absolute;
   background-color: rgb(225, 229, 235);
-  top: 100px;
+  top: 11.751vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 17.5px;
-  border: 3.14px solid rgb(50, 50, 50);
+  border-radius: 2.056vh;
+  border: 0.369vh solid rgb(50, 50, 50);
 
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -741,23 +741,23 @@ h1 {
 
   /* top right bottom left */
   50% {
-    width: 328px;
+    width: 45vh;
     max-height: 0
   }
 
   100% {
-    width: 328px;
-    max-height: 195.73px
+    width: 45vh;
+    max-height: 23vh
   }
 }
 
 .demoText {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 0.94vh;
+  padding-right: 0.94vh;
   line-height: normal;
   text-align: center;
   color: black;
-  font-size: 15px;
+  font-size: 1.763vh;
 
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -782,39 +782,39 @@ h1 {
 /* draw a smartphone screen */
 .bigRectangle {
   position: absolute;
-  top: 497.62px;
+  top: 58.475vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 275.01px;
-  height: 595.7px;
-  border: 1.965px solid rgb(100, 100, 100);
-  border-radius: 19.65px;
+  width: 32.316vh;
+  height: 70vh;
+  border: 0.231vh solid rgb(100, 100, 100);
+  border-radius: 2.31vh;
 }
 
 .appInBigRectangle {
   position: absolute;
-  top: 463.58px;
+  top: 54.475vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 275.01px;
-  height: 529.7475px;
-  border: 1.965px solid rgb(100, 100, 100);
-  border-top-left-radius: 19.65px;
-  border-top-right-radius: 19.65px;
+  width: 32.316vh;
+  height: 62.25vh;
+  border: 0.231vh solid rgb(100, 100, 100);
+  border-top-left-radius: 2.31vh;
+  border-top-right-radius: 2.31vh;
 }
 
 #simulatedSmartphoneButtonArea {
   position: absolute;
   left: 50%;
-  top: 761.43px;
+  top: 89.475vh;
   background-color: rgba(150, 150, 150, 0.1);
-  height: 68.08px;
-  width: 275.01px;
+  height: 8vh;
+  width: 32.316vh;
   z-index: 0;
   transform: translate(-50%, -50%);
-  border-bottom-left-radius: 19.65px;
-  border-bottom-right-radius: 19.65px;
-  border-top: 1.965px solid rgb(100, 100, 100);
+  border-bottom-left-radius: 2.31vh;
+  border-bottom-right-radius: 2.31vh;
+  border-top: 0.231vh solid rgb(100, 100, 100);
 }
 
 .appLine {
@@ -822,30 +822,35 @@ h1 {
   margin: 0;
 }
 
+.jspsych-display-element {
+  line-height: 3.38vh;
+  font-size: 2.115vh;
+}
+
 .smallRectangle {
   display: inline-block;
-  width: 47.16px;
-  height: 55.315px;
-  margin-left: 6.681px;
-  margin-right: 6.681px;
-  margin-top: 15.318px;
-  margin-bottom: 15.318px;
-  border: 1.965px solid transparent;
+  width: 5.542vh;
+  height: 6.5vh;
+  margin-left: 0.785vh;
+  margin-right: 0.785vh;
+  margin-top: 1.8vh;
+  margin-bottom: 1.8vh;
+  border: 0.231vh solid transparent;
   background-color: rgba(200, 200, 200, 0.35);
   overflow: hidden;
-  border-radius: 7.5px;
+  border-radius: 0.881vh;
 }
 
 .appIconSpecifics {
   display: inline-block;
-  width: 51.09px;
-  height: 59.245px;
-  margin-left: 6.681px;
-  margin-right: 6.681px;
-  margin-top: 15.318px;
-  margin-bottom: 15.318px;
+  width: 6vh;
+  height: 6.962vh;
+  margin-left: 0.785vh;
+  margin-right: 0.785vh;
+  margin-top: 1.8vh;
+  margin-bottom: 1.8vh;
   overflow: hidden;
-  border-radius: 7.5px;
+  border-radius: 0.881vh;
 }
 
 #dotContainerElement {
@@ -855,34 +860,34 @@ h1 {
 
 .dot {
   display: inline-block;
-  height: 8.51px;
-  width: 8.51px;
-  margin-left: 3.93px;
-  margin-right: 3.93px;
-  margin-top: 8.51px;
-  margin-bottom: 8.51px;
+  height: 1vh;
+  width: 1vh;
+  margin-left: 0.462vh;
+  margin-right: 0.462vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   background-color: rgba(200, 200, 200, 0.7);
   border-radius: 50%;
 }
 
 .demoButton {
   position: absolute;
-  top: 757px;
+  top: 88.954vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 78.6px;
-  height: 42.55px;
+  width: 9.236vh;
+  height: 5vh;
 
   background-color: rgba(200, 200, 200, 0.4);
-  border: 3.93px solid rgba(85, 85, 85, 1);
+  border: 0.462vh solid rgba(85, 85, 85, 1);
   color: black;
-  padding: 16px 32px;
+  padding: 1.88vh 3.76vh;
   text-align: center;
   text-decoration: none;
-  font-size: 11.79px;
-  margin: 4px 2px;
+  font-size: 1.385vh;
+  margin: 0.47vh 0.235vh;
   transition-duration: 0.4s;
-  border-radius: 50px;
+  border-radius: 5.875vh;
   outline: none;
   z-index: 999;
 
@@ -899,7 +904,7 @@ h1 {
 .loadButton {
   position: absolute;
   background-color: transparent;
-  border-radius: 7.5px;
+  border-radius: 0.881vh;
   outline: none;
   border-width: 0;
 }
@@ -926,12 +931,12 @@ h1 {
   100% {
     padding: 0px 0px 20% 0px;
     opacity: 0.0;
-    width: 47.16px;
-    height: 51.06px;
-    top: 74.5%;
+    width: 5.542vh;
+    height: 6.0vh;
+    top: 74.5vh;
     left: 58%;
     border: none;
-    border-radius: 15px;
+    border-radius: 1.763vh;
   }
 }
 
@@ -953,12 +958,12 @@ h1 {
   100% {
     padding: 0px 0px 20% 0px;
     opacity: 0.0;
-    width: 47.16px;
-    height: 51.06px;
-    top: 74.5%;
+    width: 5.542vh;
+    height: 6.0vh;
+    top: 74.5vh;
     left: 58%;
     border: none;
-    border-radius: 15px;
+    border-radius: 1.763vh;
   }
 }
 
@@ -994,8 +999,8 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: normal;
-  font-size: 21.216px;
-  width: 600px;
+  font-size: 2.493vh;
+  width: 70.505vh;
   max-width: 80%;
 }
 
@@ -1040,7 +1045,7 @@ h1 {
 }
 
 .dialog button {
-  border-width: 1px;
+  border-width: 0.118vh;
   background: rgb(200, 200, 200);
   color: black;
   font-size: 5vw;

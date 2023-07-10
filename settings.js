@@ -211,7 +211,7 @@ window.app_settings = {
 		2: 'In the next round you will encounter a cave rich in gold.<br>You will receive a message about this and then you will have 5 seconds inside it, during which you can collect from the items in the cave.',
 		3: 'In the next entry we will demonstrate receiving a report that the warehouse is half full.',
 		4: 'This time we will demonstrate receiving a report that the warehouse is full.',
-		5: 'At the beginning of the next round you will receive a report that the cargo spaceship (the one that empties the warehouse on the gold planet every 24 hours) has emptied the warehouse.<br>In addition, it will be cloudy and you will not be able to see the result of your gold search.<br>*Here, too, you would have to wait for the end message so that the search result is recorded.',
+		5: 'At the beginning of the next round you will receive a report that the cargo spaceship (the one that empties the warehouse every 24 hours) has emptied the warehouse.<br>In addition, it will be cloudy and you will not be able to see the result of your gold search.<br>*Here, too, you would have to wait for the end message so that the search result is recorded.',
 	},
 	instructionsFileName: 'index.html',
 	n_instruction_pages: 1,//24,
