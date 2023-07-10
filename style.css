@@ -48,8 +48,8 @@ body {
 }
 
 #title_img {
-  width: 300px;
-  border-radius: 20px;
+  width: 35.253vh;
+  border-radius: 2.35vh;
 }
 
 /*#pseudoBackground {
@@ -972,14 +972,14 @@ h1 {
 #repeatOrContinueButtons {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 88%;
-  width: 187.2px;
-  height: 54px;
+  top: 85vh;
+  width: 22vh;
+  height: 6.345vh;
   background-color: rgba(200, 200, 200, 0.7);
-  border: 3.93px solid rgb(50, 50, 50);
+  border: 0.462vh solid rgb(50, 50, 50);
   color: rgb(50, 50, 50);
-  font-size: 23.58px;
-  border-radius: 30px;
+  font-size: 2.771vh;
+  border-radius: 3.525vh;
   outline: none;
 }
 
@@ -1001,12 +1001,12 @@ h1 {
 
 #repeatOrContinueText_welcome_msg {
   position: absolute;
-  top: 45%;
+  top: 40vh;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: normal;
-  font-size: 21.216px;
-  width: 600px;
+  font-size: 2.493vh;
+  width: 70.505vh;
   max-width: 80%;
 }
 
