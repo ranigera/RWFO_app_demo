@@ -207,4 +207,3 @@ async function run_coin_collection(settings, runData, identifier) {
 		};
 	}, 1000);
 }
-

@@ -135,43 +135,36 @@ window.app_settings = {
 		surface_disappearance: 700,
 	},
 	text: {
-		welcomeText: 'שלום',
-		winningText: 'זכית ב- ',
-		noWinningText: '...לא זכית הפעם',
-		goodbyeText: 'נתראה בפעם הבאה',
-		devaluationNotificationText: 'הקופה מלאה, לא ניתן לצבור בה עוד כסף עד מחר.\nלחצ/י על ok כדי לאשר.',
-		verifyBeginningText: 'לחצ/י אשר כדי להתחיל.',
 		// alerts, prompts etc:
-		rewardContainerClearingMessage: 'חללית המטען רוקנה את המחסן וכעת הוא פנוי לצבירת זהב.',
+		rewardContainerClearingMessage: 'The cargo spaceship has emptied the warehouse and it is now ready to store gold.',
 		manipulationMessage: function (manipulationType) {
 			if (manipulationType == 'devaluation') {
-				return 'המחסן מלא!<br>לא ניתן לצבור בו עוד זהב עד שחללית המטען תרוקן אותו.';
+				return 'The warehouse is full!<br>It cannot store any more gold until the cargo spaceship empties it.';
 			} else if (manipulationType == 'still_valued' || manipulationType == 'still_valued_post_deval' || manipulationType == 'still_valued_replacing_devaluation') { // i.e., 'still_valued'
-				return 'המחסן מלא למחצה...';
+				return 'The warehouse is half full...';
 			}
 		},
-		confirmationCodeTextMessage: '\nכדי לאשר שקראת יש לכתוב את האותיות: ',
-		completeDemo: 'ההדגמה הסתיימה. אם ברצונך לסיים חלק זה ולהתחיל במשחק האמיתי יש לכתוב yes.\n כל דבר אחר. כדי לבצע סיבוב הדגמה נוסף יש ללחוץ על',
-		realGameBegins: 'המשחק האמיתי מתחיל עכשיו.<br>הזהב שתצבור/תצברי מעכשיו שווה כסף אמיתי.<br><br>בהצלחה!',
+		confirmationCodeTextMessage: '\nPlease enter the following letters to confirm that you have read the message: ',
+		realGameBegins: 'The real game starts now.<br>The gold you will accumulate from now on is worth real money.<br><br>Good Luck!',
 		endExperiment: function (baselineAccumulatedReward) {
-			return 'המשחק נגמר. תודה רבה שהשתתפת!' + '<br><br>' +
-				'הצלחת להביא לכדור הארץ כ-'
+			return 'The game is over. Thank you for participating!' + '<br><br>' +
+				'You managed to bring to earth '
 				+ baselineAccumulatedReward // This was designed to replace the line below.
 				// + logic.calculateReward(subData, app_settings.coinCollectionTask, dayToFinishExperiment)
-				+ ' יחידות זהב!'
+				+ ' Gold units!'
 		},
-		noConnectionToEndExperiment: 'לא מצליח להתחבר לשרת.' + '<br><br>' +
-			'נא לוודא חיבור לרשת ולנסות שוב.',
-		dialog_coinCollection: 'מצאת מערת זהב. במערה אבנים וזהב. כל נסיון לאסוף משהו (כלומר לחיצה) עולה 10 יחידות זהב. הזהב שייאסף יישמר במחסן במידה ויש בו מקום. מרגע שתיכנס/י אליה יש לך 5 שניות לשהות בה.',
+		noConnectionToEndExperiment: 'Unable to connect to the server.' + '<br><br>' +
+			'Please verify you have network connection and try again.',
+		dialog_coinCollection: "You found a gold cave. There are rocks and gold in the cave. Each attempt to collect an item (clicking) costs 10 gold units. The gold collected will be kept in the warehouse if it has room. Once you enter the cave, you'll have 5 seconds to stay there.",
 		dialog_warehouseStateQuery: 'What is the current state of the warehouse?',
 		dialog_warehouseStateQuery_allowed_answers: ['partially full', 'completely full'],
-		loadingDataError: 'יש בעיה!' +
+		loadingDataError: 'There is a problem!' +
 			'<br><br>' +
-			'א. וודא/י שאת/ה מחובר לאינטרנט.' +
+			'A. Please make sure you are connected to the internet.' +
 			'<br>' +
-			'ב. נסה/י לסגור את האפליקציה לגמרי ולהכנס מחדש.' +
+			'B. Try closing the app and reentering.' +
 			'<br><br>' +
-			'אם זה לא עוזר נא ליצור קשר עם רני: 050-5556733.',
+			"If it is still not working, please contact [NAME] at: [PHONE NUMBER].",
 	},
 	// Manipulation checks:
 	use_warehouse_state_query: false, // <HTML ADJUSTABLE>
@@ -181,7 +174,7 @@ window.app_settings = {
 		duration: 5, // in seconds
 		openningAnimTime: 1500, // in ms
 		element_disappearing_time: 150, // in ms
-		nStim: 30, // needs to fir the number of stimuli wanted
+		nStim: 30, // needs to be a multiple of the number of stimuli used
 		bg_img_path: 'images/cave.jpg',
 		outcome_win_image_path: 'images/outcome_win.png',
 		outcome_loss_image_path: 'images/outcome_loss.png',
@@ -193,7 +186,7 @@ window.app_settings = {
 		ProportionOfScreenHeightToPlaceCounter: 0.05,
 		counterTextColor: [0, 0, 255], // can be one value for gray, 3 for RGB, 4 to include alpha
 		finishMessageTextColor: [0, 0, 255], // can be one value for gray, 3 for RGB, 4 to include alpha
-		finishMessage: "להתראות",
+		finishMessage: "Goodbye",
 		costPerPress: 10, // for the winnings calculation at the end
 		rewardPerCoinStash: () => app_settings.rewards.rewardConstantSum, // for the winnings calculation at the end
 	},
@@ -203,106 +196,106 @@ window.app_settings = {
 	demoCycle: {
 		0: { isWin: true, isLoss: false, whichManipulation: null, activateManipulation: false, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: false },
 		1: { isWin: false, isLoss: false, whichManipulation: null, activateManipulation: false, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: false },
-		// 2: { isWin: false, isLoss: false, whichManipulation: null, activateManipulation: false, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: true },
-		// 3: { isWin: true, isLoss: false, whichManipulation: 'still_valued', activateManipulation: true, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: false },
-		// 4: { isWin: true, isLoss: false, whichManipulation: 'devaluation', activateManipulation: true, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: false },
-		// 5: { isWin: false, isLoss: false, whichManipulation: null, activateManipulation: false, isUnderManipulation: false, toHideOutcome: true, resetContainer: true, consumptionTest: false },
+		2: { isWin: false, isLoss: false, whichManipulation: null, activateManipulation: false, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: true },
+		3: { isWin: true, isLoss: false, whichManipulation: 'still_valued', activateManipulation: true, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: false },
+		4: { isWin: true, isLoss: false, whichManipulation: 'devaluation', activateManipulation: true, isUnderManipulation: false, toHideOutcome: false, resetContainer: false, consumptionTest: false },
+		5: { isWin: false, isLoss: false, whichManipulation: null, activateManipulation: false, isUnderManipulation: false, toHideOutcome: true, resetContainer: true, consumptionTest: false },
 	},
 	demoCycleSupportingText: {
 		0: {
-			a: 'הכנו לך הדגמה עם מסך וירטואלי שמדמה סמארטפון.<br>לחצ/י על האפליקציה כדי לשגר את החללית שלך למשימת חיפוש זהב. תחילה תראה/י את החללית נוחתת ומימין למעלה תופיע עלות שליחת החללית למשימה (1-).',
-			b: 'כעת לחצ/י על חציו התחתון של המסך ואז על חלקו העליון כדי להסיר את הקרח ולאפשר את חיפוש הזהב. לאחר מספר שניות של חיפוש תופיע התוצאה.',
-			c: 'בסיבוב הזה מצאת זהב!<br>מיד לאחר מכן הופיעה הודעת הסיום ("נתראה בפעם הבאה"). כשההודעה מופיעה זה אומר שתוצאת החיפוש נשמרה ואפשר לצאת מהאפליקציה. כדי לצאת מהאפליקציה בהדגמה לחצ/י על כפתור הבית הוירטואלי שמופיע על ציור הסמארטפון.',
+			a: 'We prepared a demo for you with a virtual screen that simulates a smartphone.<br> Tap the app to launch your spaceship to a gold-seeking mission. First, you will see your spaceship landing, and in the top right corner, the cost of sending the spaceship to the mission will be displayed (-1).',
+			b: 'Now tap the bottom half of the screen and then on the top half to remove the ice layer and enable the gold search. After a few seconds of searching, the outcome will be presented.',
+			c: 'In this round you have found gold!<br>Immediately afterwards, the end message appears ("See you next time"). When this message appears, it means that the search result has been recorded and you can exit the app. To exit the app in this demo, tap the home button on the virtual smartphone.',
 		},
-		1: 'עכשיו תבצע/י מספר כניסות ויציאות מהאפליקציה ונדגים אפשרויות שונות.<br>כעת ניתן להיכנס ולהסיר את הקרח.<br>הפעם לא תמצא/י זהב (רק אבנים חסרות ערך).',
-		2: 'בסיבוב הבא תיתקל/י במערה עתירת זהב.<br>תקבל/י על כך הודעה ולאחריה יהיו לך 5 שניות בתוכה, בהן תוכל/י לאסוף ממה שבמערה.',
-		3: 'בכניסה הבאה נדגים קבלת דיווח שהמחסן מלא למחצה.',
-		4: 'הפעם נדגים קבלת דיווח שהמחסן מלא.',
-		5: 'בתחילת הסיבוב הבא תקבל/י דיווח שחללית המטען (זו שמרוקנת את המחסן על כוכב הזהב כל 24 שעות) רוקנה את המחסן.<br>בנוסף, יהיה מעונן ולא תוכל/י לראות את התוצאה של חיפוש הזהב.<br>*גם כאן יש לחכות להודעת הסיום כדי שתוצאת החיפוש תישמר.',
+		1: "Now you will enter (and exit) the app a few times and we will demonstrate different task components.<br> You can now enter the app and remove the ice layers.<br> This time you won't find gold (only worthless rocks).",
+		2: 'In the next round you will encounter a cave rich in gold.<br>You will receive a message about this and then you will have 5 seconds inside it, during which you can collect from the items in the cave.',
+		3: 'In the next entry we will demonstrate receiving a report that the warehouse is half full.',
+		4: 'This time we will demonstrate receiving a report that the warehouse is full.',
+		5: 'At the beginning of the next round you will receive a report that the cargo spaceship (the one that empties the warehouse on the gold planet every 24 hours) has emptied the warehouse.<br>In addition, it will be cloudy and you will not be able to see the result of your gold search.<br>*Here, too, you would have to wait for the end message so that the search result is recorded.',
 	},
-	instructionsFileName: 'instructions.html',
+	instructionsFileName: 'index.html',
 	n_instruction_pages: 1,//24,
 	lastInstructionsPageExplainsDemo: true,
 	instructions_test_questions: {
 		toRandomizeQuestions: false,
-		dont_know_answer: 'לא יודע/ת.',
+		dont_know_answer: "I don't know.",
 		1: {
-			question: 'האם יש עלות כלשהי לכניסה לאפליקציה (כלומר לנסיון מציאת זהב)?',
-			correct_answer: 'כן, זה עולה 1 יחידות זהב.',
-			distractor_1: 'אין עלות לכניסה, יש עלות רק לנסיון להוציא דברים ממערה.',
-			distractor_2: 'כן, זה עולה 15 יחידות זהב.',
-			distractor_3: 'כן, העלות משתנה בכל פעם.',
+			question: 'Is there a cost to enter the app (that is, to try and find gold)?',
+			correct_answer: 'Yes, it costs 1 gold unit.',
+			distractor_1: 'There is no entry cost, there is a cost only on attempts to collect items in a cave.',
+			distractor_2: 'Yes, it costs 15 gold units.',
+			distractor_3: 'Yes, the cost varies each time.',
 		},
-		// 2: {
-		// 	question: 'האם הסיכוי למצוא זהב משתנה בזמנים מסויימים?',
-		// 	correct_answer: 'לא, הסיכוי למצוא זהב זהה תמיד.',
-		// 	distractor_1: 'הסיכוי למצוא זהב משתנה כל הזמן.',
-		// 	distractor_2: 'הסיכוי למצוא זהב משתנה כשמעונן ואין אפשרות לראות אם מצאנו זהב.',
-		// 	distractor_3: 'אם לאחרונה מצאנו הרבה זהב הסיכוי למצוא עוד זהב קטן יותר ולהפך.',
-		// },
-		// 3: {
-		// 	question: 'מה קורה אם המחסן מלא?',
-		// 	correct_answer: 'אין אפשרות לצבור עוד זהב שיילקח לכדור הארץ ויהפוך לכסף ממשי עבורי עד שירוקנו את המחסן עבורי בתום היממה (ב-5:00 לפנות בוקר).',
-		// 	distractor_1: 'אצטרך לשלוח באופן ישיר ומיידי את הזהב לכדור הארץ.',
-		// 	distractor_2: 'זה אומר שהמשחק נגמר.',
-		// 	distractor_3: 'המחסן לא יכול להתמלא אלא רק להתמלא באופן חלקי.',
-		// },
-		// 4: {
-		// 	question: 'מה קורה אם המחסן מלא באופן חלקי?',
-		// 	correct_answer: 'שום דבר, זה רק עדכון. כל עוד המחסן אינו מלא לגמרי ניתן להמשיך לצבור בו זהב.',
-		// 	distractor_1: 'זה לא משהו שאדע עליו מפני שאין דיווחים על כך שהמחסן מלא רק באופן חלקי.',
-		// 	distractor_2: 'אין אפשרות לצבור עוד זהב שיילקח לכדור הארץ ויהפוך לכסף ממשי עבורי עד שירוקנו את המחסן עבורי בתום היממה (ב-5:00 לפנות בוקר).',
-		// 	distractor_3: 'אצטרך לשלוח באופן ישיר ומיידי את הזהב לכדור הארץ.',
-		// },
-		// 5: {
-		// 	question: 'מה השווי של גושי הזהב שאני יכול/ה למצוא?',
-		// 	correct_answer: '15 יחידות זהב.',
-		// 	distractor_1: 'הסכום משתנה והוא יוצג בכל פעם בהתאם.',
-		// 	distractor_2: '1 יחידות זהב.',
-		// 	distractor_3: 'הסכום משתנה ואין לי אפשרות לדעת אותו.',
-		// },
-		// 6: {
-		// 	question: 'לאחר שנכנסתי לאפליקציה, מתי אוכל לצאת ממנה כך שתוצאת החיפוש תיחשב לי?',
-		// 	correct_answer: 'כאשר תופיע הודעת הסיום (בה כתוב "נתראה בפעם הבאה").',
-		// 	distractor_1: 'מיד לאחר הכניסה.',
-		// 	distractor_2: 'מיד עם הופעתה של תוצאת החיפוש.',
-		// 	distractor_3: 'כשמופיעים עננים.',
-		// },
-		// 7: {
-		// 	question: 'מה קורה כשמעונן על כוכב הלכת ואין לי אפשרות לראות את תוצאות החיפוש?',
-		// 	correct_answer: 'הכל ממשיך בדיוק אותו דבר. אין שינוי מלבד זה שאיני יכול/ה לראות את תוצאת החיפוש.',
-		// 	distractor_1: 'המשחק לא זמין בזמנים אלו ולכן עדיף לנסות מאוחר יותר.',
-		// 	distractor_2: 'אין עלות לכניסה.',
-		// 	distractor_3: 'אין לי אפשרות לצבור את הזהב במחסן.',
-		// },
-		// 8: {
-		// 	question: 'כיצד אוכל להרוויח כסף אמיתי?',
-		// 	correct_answer: 'פשוט להיכנס לאפליקציה כדי לחפש זהב. במידה ומצאתי זהב ויש מקום במחסן, הזהב יילקח לכדור הארץ ויומר לכסף אמיתי. ככל שאצבור יותר זהב ארוויח יותר כסף.',
-		// 	distractor_1: 'אין אפשרות להרוויח כסף אמיתי במשחק.',
-		// 	distractor_2: 'פשוט להיכנס לאפליקציה כדי לחפש אבנים. במידה ומצאתי אבנים ויש מקום במחסן, האבנים יילקחו לכדור הארץ ויומרו לכסף אמיתי.',
-		// 	distractor_3: 'להיכנס לאפליקציה ולהמתין בה זמן רב ככל שניתן לפני שאסגור אותה. ככל שהיא פתוחה יותר זמן ברצף, ארוויח יותר.',
-		// },
-		// 9: {
-		// 	question: 'כמה כניסות ניתן לבצע בכל יום?',
-		// 	correct_answer: 'כמה שרוצים, אך לפחות 5 כניסות בכל יום על מנת שכוכב הזהב יישאר זמין (ואיתו היכולת להמשיך לצבור זהב).',
-		// 	distractor_1: 'כמה שרוצים, אך לפחות 2 כניסות בכל יום על מנת שכוכב הזהב יישאר זמין (ואיתו היכולת להמשיך לצבור זהב).',
-		// 	distractor_2: 'כמה שרוצים, אך לכל היותר 100 כניסות בכל יום על מנת שכוכב הזהב יישאר זמין (ואיתו היכולת להמשיך לצבור זהב).',
-		// 	distractor_3: 'כמה שרוצים, אך לכל היותר 300 כניסות בכל יום על מנת שכוכב הזהב יישאר זמין (ואיתו היכולת להמשיך לצבור זהב).',
-		// },
-		// 10: {
-		// 	question: 'מה מהבאים לא נכון לגבי מערות עתירות זהב שאני עשוי/ה להיתקל בהן לפעמים?',
-		// 	correct_answer: 'כל התשובות נכונות (למעט לא יודע/ת).',
-		// 	distractor_1: 'יש לי 5 שניות בלבד לשהות במערה, בהן אוכל לאסוף מהדברים שבה.',
-		// 	distractor_2: 'כל נסיון איסוף (לחיצה) בתוך המערה עולה 10 יחידות זהב.',
-		// 	distractor_3: 'שווי גושי הזהב והאבנים זהה לשווי גושי הזהב והאבנים בחיפושי הזהב הרגילים.',
-		// },
-		// 11: {
-		// 	question: 'מהו משך המשחק?',
-		// 	correct_answer: 'משך המשחק אינו קבוע מראש. הוא אורך בין ימים אחדים לחודש.',
-		// 	distractor_1: 'יום אחד.',
-		// 	distractor_2: 'שבוע.',
-		// 	distractor_3: 'חודש.',
-		// },
+		2: {
+			question: 'Does the chance of finding gold vary at certain times?',
+			correct_answer: 'No, the chance of finding gold is always the same.',
+			distractor_1: 'The chance of finding gold changes all the time.',
+			distractor_2: 'The chance of finding gold changes when it is cloudy and it is not possible to see if I found gold.',
+			distractor_3: 'If I recently found a lot of gold, the chance of finding more gold is smaller and vice versa.',
+		},
+		3: {
+			question: 'What happens if the warehouse is full?',
+			correct_answer: 'It is not possible to accumulate any more gold that will be taken to Earth and converted into real money for me until the warehouse is emptied at the end of the day (at 5:00 AM).',
+			distractor_1: 'I will need to directly and immediately send the gold to Earth.',
+			distractor_2: 'This means that the game is over.',
+			distractor_3: 'The warehouse cannot be filled completely but only partially.',
+		},
+		4: {
+			question: 'What happens if the warehouse is partially full?',
+			correct_answer: "Nothing, it's just an update. As long as the warehouse is not completely full, it is possible to continue accumulating gold in it.",
+			distractor_1: "It's not something I would know about because there are no reports of the warehouse being only partially full.",
+			distractor_2: 'It is not possible to accumulate any more gold that will be taken to Earth and converted into real money for me until the warehouse is emptied at the end of the day (at 5:00 AM).',
+			distractor_3: 'I will need to directly and immediately send the gold to Earth.',
+		},
+		5: {
+			question: 'What is the value of the gold piles I can find?',
+			correct_answer: '15 gold units.',
+			distractor_1: 'The amount varies and will be displayed each time accordingly.',
+			distractor_2: '1 gold unit.',
+			distractor_3: 'The amount varies and I have no way of knowing it.',
+		},
+		6: {
+			question: 'After I enter the app, when can I exit it so that the search outcome will be counted for me?',
+			correct_answer: 'When the end message (saying "See you next time") appears.',
+			distractor_1: 'Immediately after I enter.',
+			distractor_2: 'Immediately upon the presentation of the search outcome.',
+			distractor_3: 'When clouds appear.',
+		},
+		7: {
+			question: "What happens when the gold planet is cloudy and I can't see the search outcomes?",
+			correct_answer: 'Everything continues exactly the same. There is no change except for the fact that I cannot see the search outcome.',
+			distractor_1: 'The game is not available at these times so it is better to try again later.',
+			distractor_2: 'There is no entry cost.',
+			distractor_3: "I cannot acquire the gold in the warehouse.",
+		},
+		8: {
+			question: 'How can I earn real money?',
+			correct_answer: 'Just enter the app to search for gold. If I find gold and there is room in the warehouse, the gold will be taken to Earth and converted into real money. The more gold I acqire, the more money I will earn.',
+			distractor_1: 'It is not possible to earn real money in the game.',
+			distractor_2: 'Just enter the app to search for rocks. If I find rocks and there is room in the warehouse, the rocks will be taken to Earth and converted into real money.',
+			distractor_3: 'Enter the app and wait as long as possible before I close it. The longer it is continuously open, the more I will earn.',
+		},
+		9: {
+			question: 'How many entries can be made each day?',
+			correct_answer: 'As much as desired, but at least 5 entries per day in order to keep the gold planet available (and with it the ability to continue accumulating gold).',
+			distractor_1: 'As much as desired, but at least 2 entries per day in order to keep the gold planet available (and with it the ability to continue accumulating gold).',
+			distractor_2: 'As much as desired, but at most 100 entries per day in order to keep the gold planet available (and with it the ability to continue accumulating gold).',
+			distractor_3: 'As much as desired, but at most 300 entries per day in order to keep the gold planet available (and with it the ability to continue accumulating gold).',
+		},
+		10: {
+			question: 'Which of the following is not true regarding the rich-in-gold caves that I may occasionally encounter?',
+			correct_answer: "All of the answers are correct (except for 'I don't know').",
+			distractor_1: 'I have only 5 seconds inside the cave, during which I can collect from the items placed in it.',
+			distractor_2: 'Each attempt (click) to collect an item inside the cave costs 10 gold units.',
+			distractor_3: 'The value of the gold and rock piles is equal to the value of the gold and rock piles in the regular gold searches.',
+		},
+		11: {
+			question: 'What is the duration of the game?',
+			correct_answer: 'The duration of the game is not predetermined. It can range from a few days to one month.',
+			distractor_1: 'One day.',
+			distractor_2: 'A week.',
+			distractor_3: 'A month.',
+		},
 		// // [replace_here_ with_a_number]: {
 		// // 	question: '',
 		// // 	correct_answer: '',
@@ -320,16 +313,3 @@ window.app_settings = {
 	// maybe remove unecessary ones (affects the list that is formed to work with in logic, not what is saved).
 	// NOTE: the completedInstructions is assigned during the instructions upon success.
 }
-
-// contingency:
-/////////////// !!!!!!!!!!  chancePerSec: 1 / winningRate,
-// winningSum: (will be computed unifomly in the given range)
-// Notes
-// ------------
-// The short-circuit (&&) and spread operater assinmgnet (...) used for the assinments here were based on the technique described here: https://stackoverflow.com/questions/11704267/in-javascript-how-to-conditionally-add-a-member-to-an-object/40560953#40560953
-// * enetually I did not use it but it looks like this.
-//		...(!this.isVariableReward && {
-//			// winningSum: (will be computed unifomly in the given range)
-//			minWinningSum: 20,
-//			maxWinningSum: 30
-//		})

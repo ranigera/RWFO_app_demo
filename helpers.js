@@ -727,7 +727,7 @@ var dialog_helper = {
 					}
 				}
 			} else if (!!confirmation) { // for a random code
-				dom_helper.set_text("dialog_confirmation_msg", 'כדי להמשיך יש להקליד ' + "'" + confirmation + "'" + '.');
+				dom_helper.set_text("dialog_confirmation_msg", 'To continue type ' + "'" + confirmation + "'" + '.');
 				dom_helper.show("dialog_confirmation_msg")
 				dom_helper.show("dialog_response_text");
 				dom_helper.disable("dialog_ok_button");

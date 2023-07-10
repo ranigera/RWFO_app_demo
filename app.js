@@ -1,6 +1,6 @@
 async function runApp() {
 	appRunning = true; // used to determine whther a new session can start
-	clearTimeout(checkIfAppStartedRunning) // Stop checking (through the index.html that app started running on the first time)
+	clearTimeout(checkIfAppStartedRunning) // Stop checking (through the app.html that app started running on the first time)
 	// ****************************************************************
 	//           SET & INITIALIZE STUFF:
 	// ----------------------------------------------------------------
@@ -14,7 +14,7 @@ async function runApp() {
 	if (!!Array.from(document.images).filter(img => img.id !== "installation_guide" && img.naturalHeight === 0).length) { // check that all images were successfully loaded - detects if there was an error in loading an image
 		console.log('Problem in image loading');
 
-		// alert('היתה בעיה בטעינה. לאחר שתאשר/י האפליקציה תרענן את עצמה. אם זה לא נפתר תוך כמה נסיונות נסה/י לסגור את האפליקציה לגמרי ולפתוח מחדש לפחות פעמיים. אם זה עדיין לא נפתר נא לפנות לנסיינ/ית בפל: 050-5556733.')
+		// alert('There was a problem loading. After you confirm reading, the application will refresh itself. If it is not solved within a few attempts, try to close the application completely and reopen it at least twice. If it is still not solved, please contact the experimenter at: XXX-XXX-XXXX.')
 		// reload page after unregistering service worker and
 		navigator.serviceWorker.getRegistration().then(function (reg) {
 			if (reg) {
@@ -183,13 +183,13 @@ async function runApp() {
 
 	if (!runData.hideOutcome) { // presenting the outcome:
 		if (runData.isWin) {
-			var outcomeText = "מצאת " + runData.reward + " יחידות זהב"
+			var outcomeText = "You found " + runData.reward + " gold units"
 			var outcomeElementID = 'outcome_win'
 		} else if (runData.isLoss) {
 			var outcomeText = "You lost " + runData.reward + " gold units"
 			var outcomeElementID = 'outcome_loss'
 		} else {
-			var outcomeText = "לא מצאת זהב הפעם"
+			var outcomeText = "No gold this time"
 			var outcomeElementID = 'outcome_no_win'
 		}
 
