@@ -52,9 +52,7 @@ async function runApp() {
 	// ****************************************************************
 	//           RUN THE APP
 	// ----------------------------------------------------------------
-	if (runData.isDemo) {
-		await delay(500); // to account for time it takes the embedded app to be openned.
-	}
+	await delay(500); // to account for time it takes the embedded app to be openned.
 
 	dom_helper.hide('app_will_load_soon');
 	dom_helper.hide('loading_animation');
@@ -148,11 +146,6 @@ async function runApp() {
 	dom_helper.hide("spaceship");
 	dom_helper.show("upper_half");
 	dom_helper.show("lower_half");
-
-	// For the flow of the demo:
-	if (runData.isDemo) {
-		subject_data_worker.postMessage({ broadcast: 'sequence_entering_stage_presented' });
-	}
 
 	// wait for 2 clicks to happen
 	appRunning = false;

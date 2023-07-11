@@ -306,10 +306,9 @@ window.app_settings = {
 	},
 	// Meta stuff:
 	instructions_HTML_title: 'Instructions',
-	instructions_main_HTML_element: "instructions_iframe",
 	App_HTML_title: function () { return this.context.replace(/_/g, ' ') },
 	App_main_HTML_element: "main_container",
-	dataVarList: ["serial", "uniqueEntryID", "subId", "group", "context", "day", "isWin", "isLoss", "reward", "cost", "baselineAccumulatedReward", "resetContainer", "resetContainerConfirmationTime", "manipulationToday", "activateManipulation", "isUnderManipulation", "hideOutcome", "isFirstTime", "todayInitialOutcomes", "startTime", "press1Time", "press2Time", "outcomeTime", "endTime", "manipulationAlertTime", "showInstructions", "instructionsStartedFlag", "completedInstructions", "isDemo", "demoTrialNum", "isDialogOn", "coin_task_finish_status", "endExperiment", "manipulationConfirmationTime", "manipCheckAlertTime", "manipChecConfirmationTime", "localSessionId"],
+	dataVarList: ["serial", "uniqueEntryID", "subId", "group", "context", "day", "isWin", "isLoss", "reward", "cost", "baselineAccumulatedReward", "resetContainer", "resetContainerConfirmationTime", "manipulationToday", "activateManipulation", "isUnderManipulation", "hideOutcome", "isFirstTime", "todayInitialOutcomes", "startTime", "press1Time", "press2Time", "outcomeTime", "endTime", "manipulationAlertTime", "showInstructions", "instructionsStartedFlag", "completedInstructions", "demoTrialNum", "isDialogOn", "coin_task_finish_status", "endExperiment", "manipulationConfirmationTime", "manipCheckAlertTime", "manipChecConfirmationTime", "localSessionId"],
 	// maybe remove unecessary ones (affects the list that is formed to work with in logic, not what is saved).
 	// NOTE: the completedInstructions is assigned during the instructions upon success.
 }
