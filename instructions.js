@@ -269,7 +269,9 @@ var settings = Object.assign({}, app_settings);
 		button_html: '<button id="repeatOrContinueButtons">%choice%</button>',
 		timeline: [
 			{
-				stimulus: '<p id="repeatOrContinueText_welcome_msg">This is a demo of the real-world free-operant paradigm.<br><br>This paradigm was implemented as a smartphone app and was presented <a href="https://psyarxiv.com/kgqun/" target="_blank">here</a>.<br><br>The demo briefly shows how the smartphone app works (the main task components).<br><br><img id="title_img" src="images/game_title_image.jpg" alt="Image"></p>',
+				stimulus: '<p id="repeatOrContinueText_welcome_msg">This is a demo of the real-world free-operant paradigm.<br><br>This paradigm was implemented as a smartphone app and was presented <a href="https://doi.org/10.3758/s13428-023-02263-6" target="_blank">here</a>.<br><br>The demo briefly shows how the smartphone app works (the main task components).<br><br><img id="title_img" src="images/game_title_image.jpg" alt="Image"><br><br>' +
+					'<span style="font-size: 58%; width: 100%; display: block; text-align: left; line-height: 2;">&#8226; If you have any questions, interested in other functionalities or wish to collaborate, please <a href="mailto:ranigera.aristo@gmail.com">contact us</a>.<br>' +
+					'&#8226; The task is available in this <a href="https://github.com/ranigera/HabitApp" target="_blank">GitHub repository</a>.<br></span></p>',
 			}
 		]
 	};
@@ -296,7 +298,9 @@ var settings = Object.assign({}, app_settings);
 		button_html: '<button id="repeatOrContinueButtons">%choice%</button>',
 		timeline: [
 			{
-				stimulus: '<p id="repeatOrContinueText">Thanks for trying out our app.<br><br>If you have any questions, interested in other functionalities or wish to collaborate, please contact us.<br><br></p>',
+				stimulus: '<p id="repeatOrContinueText">Thanks for trying out our app.<br><br>If you have any questions, interested in other functionalities or wish to collaborate, please <a href="mailto:ranigera.aristo@gmail.com">contact us</a>.<br><br>' +
+					'A detailed description of the task can be found in our paper <a href="https://doi.org/10.3758/s13428-023-02263-6" target="_blank">"A novel free-operant framework enables experimental habit induction in humans"</a> (Gera et al., 2023).<br><br>' +
+					'The task is available in this <a href="https://github.com/ranigera/HabitApp" target="_blank">GitHub repository</a>.<br><br></p>',
 			}
 		]
 	};
