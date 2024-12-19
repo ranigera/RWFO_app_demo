@@ -713,6 +713,7 @@ h1 {
 
   100% {
     width: 45vh;
+    height: auto;
     max-height: 23vh
   }
 }
